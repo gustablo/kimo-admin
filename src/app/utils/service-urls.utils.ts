@@ -2,7 +2,9 @@ export enum ServiceURLs {
 
     PRODUCTS = '/products',
 
+    PRODUCT_IMAGES = '/productImages',
+    
     IMAGES = '/images',
 
-    PRODUCT_IMAGES = '/productImages'
+    ORDERS = '/orders',
 }
