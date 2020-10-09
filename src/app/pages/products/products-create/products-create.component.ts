@@ -58,7 +58,6 @@ export class ProductsCreateComponent implements OnInit {
   }
 
   storeImage() {
-    console.log(this.imageToUpload);
     this.imageService.store(this.imageToUpload).subscribe((image: ImageModel) => {
       this.storeProduct(image.id);
     }, err => {});
@@ -101,7 +100,7 @@ export class ProductsCreateComponent implements OnInit {
     const formData = new FormData();
     formData.append('file', fileToUpload, fileToUpload.name);
     this.imageToUpload = formData;
-    console.log(fileToUpload.name);
+
     const reader = new FileReader();
     this.imagePath = event.target.files;
     reader.readAsDataURL(event.target.files[0]);

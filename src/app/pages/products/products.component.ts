@@ -43,7 +43,6 @@ export class ProductsComponent implements OnInit, OnDestroy {
     this.observerIndex$ = this.productService.index(this.page, this.limit, this.productFilter)
       .subscribe(({ data }) => {
         this.dataSource = data;
-        // console.log(Object.keys(new ProductListModel()), this.dataSource)
     }, err => {});
   }
 
