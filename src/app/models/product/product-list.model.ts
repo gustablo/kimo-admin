@@ -1,3 +1,5 @@
+import { ImageModel } from '../image/image.model';
+
 export class ProductListModel {
     id: number = 0;
     name: string = '';
@@ -7,4 +9,9 @@ export class ProductListModel {
     price: number = 0;
     discountPrice: number = 0;
     quantity: number = 0;
+    images: ImageModel[];
+
+    constructor() {
+        this.images = [];
+    }
 }

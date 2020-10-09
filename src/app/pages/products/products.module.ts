@@ -7,6 +7,7 @@ import { ProductsEditComponent } from './products-edit/products-edit.component';
 
 import { SharedModule } from '../../shared/shared.module';
 import { ProductsRoutingModule } from './products-routing.module';
+import { ProductsModalsModule } from './products-modals/products-modals.module';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { ProductsRoutingModule } from './products-routing.module';
   imports: [
     CommonModule,
     SharedModule,
-    ProductsRoutingModule
+    ProductsRoutingModule,
+    ProductsModalsModule
   ],
   exports: [
   ]

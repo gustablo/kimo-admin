@@ -22,6 +22,19 @@ export class BaseService {
     return { headers };
   }
 
+  private prepareHeaderMultiPart(headers: HttpHeaders | null): object {
+    headers = headers || new HttpHeaders();
+
+    headers = headers.set('Accept', 'multipart/form-data');
+    headers = headers.set(
+      'Authorization',
+      'Bearer ' + localStorage.getItem('access_token')
+    );
+
+    return { headers };
+  }
+
+
   /*
    * Realiza uma requisicao do tipo POST
    *
@@ -176,6 +189,22 @@ export class BaseService {
     const expandedHeaders = this.prepareHeader(httpHeaders);
 
     return this.http.delete(url, expandedHeaders);
+  }
+
+  protected postFile(clazz: FormData, baseServiceURL: ServiceURLs, pathParams: Array<string> ) {
+    let url = '';
+    if (pathParams != null && pathParams.length > 0) {
+      url = environment.api.concat(
+        this.buildPathParams(baseServiceURL, pathParams)
+      );
+    } else {
+      url = environment.api.concat(baseServiceURL.toString());
+    }
+
+    const httpHeaders = new HttpHeaders();
+    const expandedHeaders = this.prepareHeaderMultiPart(httpHeaders);
+
+    return this.http.post(url, clazz, expandedHeaders);
   }
 
   /*

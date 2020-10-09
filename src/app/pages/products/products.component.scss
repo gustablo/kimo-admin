@@ -1,11 +1,17 @@
 .products-component {
+    margin-top: 80px;
+    max-height: 85vh;
 
     table {
-        width: 80%;
-        margin: 0 10%;
+        width: 90%;
+        margin: 0 5%;
 
         td, th {
             text-align: center;
+        }
+
+        img {
+            &:hover { cursor: pointer; }
         }
     }
 
