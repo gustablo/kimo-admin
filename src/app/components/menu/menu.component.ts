@@ -25,7 +25,7 @@ export class MenuComponent implements OnInit {
   }
 
   navigateTo(path) {
-    this.router.navigate([`dashboard/${path}`])
+    this.router.navigate([`/${path}`])
   }
 
 }
