@@ -1,0 +1,27 @@
+.example-container {
+    position: absolute;
+    width: 100vw;
+    min-height: 100vh;
+  }
+  
+.example-sidenav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20vw;
+    background: rgba(233, 30, 99, 1);
+    opacity: 0.8;
+}
+
+mat-sidenav:not(.mat-drawer-opened) {
+  transform: translate3d(0, 0, 0) !important;
+  visibility: visible !important;
+  width: 5vw !important;
+  overflow: hidden !important;
+  margin-right: 5vw;
+  overflow-x: hidden !important;
+}
+
+::ng-deep .mat-drawer-inner-container{
+  overflow: hidden !important;
+}

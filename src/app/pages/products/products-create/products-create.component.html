@@ -1,0 +1,56 @@
+<div class="products-create-component" fxLayoutAlign="center center">
+
+    <mat-card>
+        <form fxLayout="column" [formGroup]="form" (submit)="onSubmit()">
+            <div fxLayout="row" fxLayoutGap="3%">
+                <mat-form-field appearance="outline" fxFlex="40%">
+                    <mat-label>Nome</mat-label>
+                    <input matInput [(ngModel)]="productCreate.name" formControlName="name" />
+                </mat-form-field>
+
+            </div>
+
+            <div fxLayout="row" fxLayoutGap="3%">
+                <mat-form-field appearance="outline" fxFlex="30%">
+                    <mat-label>Tamanho</mat-label>
+                    <input matInput [(ngModel)]="productCreate.size" formControlName="size" />
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" fxFlex="30%">
+                    <mat-label>Cor</mat-label>
+                    <input matInput [(ngModel)]="productCreate.color" formControlName="color" />
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" fxFlex="30%">
+                    <mat-label>Tipo</mat-label>
+                    <input matInput [(ngModel)]="productCreate.type" formControlName="type" />
+                </mat-form-field>
+            </div>
+
+            <div fxLayout="row" fxLayoutGap="3%">
+                <mat-form-field appearance="outline" fxFlex="30%">
+                    <mat-label>Preço</mat-label>
+                    <input matInput [(ngModel)]="productCreate.price" formControlName="price" />
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" fxFlex="30%">
+                    <mat-label>Preço com desconto</mat-label>
+                    <input matInput [(ngModel)]="productCreate.discountPrice" formControlName="discountPrice" />
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" fxFlex="30%">
+                    <mat-label>Quantidade</mat-label>
+                    <input matInput [(ngModel)]="productCreate.quantity" formControlName="quantity" type="number" />
+                </mat-form-field>
+            </div>
+
+
+            <div fxLayoutAlign="center center">
+                <button mat-raised-button color="primary">CADASTRAR</button>
+            </div>
+
+        </form>
+
+    </mat-card>
+
+</div>

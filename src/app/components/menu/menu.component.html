@@ -1,0 +1,43 @@
+<mat-sidenav-container class="example-container">
+    <mat-sidenav #sidenav mode="side" opened class="example-sidenav bg-pink" [fixedInViewport]="options.value.fixed"
+        [fixedTopGap]="options.value.top" [fixedBottomGap]="options.value.bottom">
+
+        <p><button mat-button (click)="sidenav.toggle()" (click)="opened = !opened">
+            <mat-icon>menu</mat-icon>
+        </button></p>
+
+        <mat-nav-list>
+
+            <mat-list-item >
+                <mat-icon mat-list-icon>person</mat-icon>
+                <h4 mat-line *ngIf="opened" [matMenuTriggerFor]="products">Produtos</h4>
+                <mat-menu #products="matMenu">
+                    <button mat-menu-item  (click)="navigateTo('products')">Listar Produtos</button>
+                    <button mat-menu-item  (click)="navigateTo('products-create')">Novo Produto</button>
+                </mat-menu>
+            </mat-list-item>
+
+            <mat-list-item>
+                <mat-icon mat-list-icon>assignment</mat-icon>
+                <h4 mat-line *ngIf="opened">Management B</h4>
+            </mat-list-item>
+            <mat-list-item>
+                <mat-icon mat-list-icon>domain</mat-icon>
+                <h4 mat-line *ngIf="opened">Management C</h4>
+            </mat-list-item>
+
+            <mat-list-item>
+                <mat-icon mat-list-icon>folder_shared</mat-icon>
+                <h4 mat-line *ngIf="opened">Management X</h4>
+            </mat-list-item>
+        </mat-nav-list>
+
+    </mat-sidenav>
+
+    <mat-sidenav-content [formGroup]="options">
+
+        <div [style.marginLeft]="opened ? '0vw' : '5vw'">
+            <ng-content></ng-content>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>
